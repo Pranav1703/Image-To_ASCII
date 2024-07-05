@@ -87,18 +87,16 @@ func main(){
 			}
 
 		}
+
 		fmt.Println(row)
-		_,err := outFile.WriteString(row)
-		if err!=nil{
-			log.Fatalln(err)
-		}
+
+		// _,err := outFile.WriteString(row)
+		// if err!=nil{
+		// 	log.Fatalln(err)
+		// }
 		// fmt.Println("no of lines written to output.txt?",lines)
 
 	} 
-
-
-
-
 
 }
 
