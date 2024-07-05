@@ -33,21 +33,13 @@ func main(){
 		log.Fatalln("Couldnt decode file: ",err)
 	}
 
-
-	outFile, err := os.Create("output.txt")
-    if err != nil {
-        fmt.Println("couldnt create outfile: ",err)
-    }
-    defer outFile.Close()
-
 	//resize img
-
 	newImg := imageResize(img,width,height)
 
 	b := newImg.Bounds()
 
 	//new image with bounds b in which each pixel has value (r,g,b,a) = (0,0,0,0) 
-	imgSet :=image.NewRGBA(b) 
+	// imgSet :=image.NewRGBA(b) 
 
 
 	for y := b.Min.Y;y<b.Max.Y;y++{
@@ -69,7 +61,7 @@ func main(){
 			
 
 			// sets the pixel to newGreyPixel at (x,y) in imgSet
-			imgSet.Set(x,y,greyPixel)
+			// imgSet.Set(x,y,greyPixel)
 
 			// uses ascii2 series of characters
 			// var i int = int(lum / 3.65)
@@ -89,12 +81,6 @@ func main(){
 		}
 
 		fmt.Println(row)
-
-		// _,err := outFile.WriteString(row)
-		// if err!=nil{
-		// 	log.Fatalln(err)
-		// }
-		// fmt.Println("no of lines written to output.txt?",lines)
 
 	} 
 
